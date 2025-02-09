@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'finance',
 ]
 
@@ -76,10 +77,15 @@ WSGI_APPLICATION = 'ai_budget_tracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'budget_db',  # Your PostgreSQL database name
+        'USER': 'divyadharshini',  # Default PostgreSQL user
+        'PASSWORD': 'divyaSdhar3105',  # Use the password you set
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation

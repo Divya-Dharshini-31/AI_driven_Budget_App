@@ -1,6 +1,7 @@
+from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('api/', include('finance.urls')),
+    path("admin/", admin.site.urls),
+    path("api/", include("finance.urls")),  # Ensure the finance URLs are included
 ]
-

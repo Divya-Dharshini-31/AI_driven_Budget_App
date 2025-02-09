@@ -1,7 +1,11 @@
-from rest_framework import generics
-from .models import Transaction
-from .serializers import TransactionSerializer
+from rest_framework import viewsets
+from .models import Budget, Expense
+from .serializers import BudgetSerializer, ExpenseSerializer
 
-class TransactionListCreate(generics.ListCreateAPIView):
-    queryset = Transaction.objects.all()
-    serializer_class = TransactionSerializer
+class BudgetViewSet(viewsets.ModelViewSet):
+    queryset = Budget.objects.all()
+    serializer_class = BudgetSerializer
+
+class ExpenseViewSet(viewsets.ModelViewSet):
+    queryset = Expense.objects.all()
+    serializer_class = ExpenseSerializer
