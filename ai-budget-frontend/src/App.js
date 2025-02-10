@@ -1,31 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import Navbar from "./components/Navbar"; 
 
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-
-function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/budget/")
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
+export default function App() {
   return (
-    <div>
-      <h1>Budget Data</h1>
-      <ul>
-        {data.map((item, index) => (
-          <li key={index}>{item.name}: {item.amount}</li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
-
-
-export default App;
