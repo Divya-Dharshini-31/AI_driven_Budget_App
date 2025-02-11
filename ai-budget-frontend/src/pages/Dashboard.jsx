@@ -1,25 +1,26 @@
-import { useEffect, useState } from "react";
-import { fetchUser } from "../api/api";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import API_BASE_URL from "../config";
 
-export default function Dashboard() {
-  const [user, setUser] = useState(null);
+const Dashboard = () => {
+    const [budget, setBudget] = useState([]);
 
-  useEffect(() => {
-    async function getUserData() {
-      const userData = await fetchUser(1); // Change based on login session
-      setUser(userData);
-    }
-    getUserData();
-  }, []);
+    useEffect(() => {
+        axios.get(`${API_BASE_URL}/budget/`)
+            .then(response => setBudget(response.data))
+            .catch(error => console.error("Error fetching budget:", error));
+    }, []);
 
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold">Dashboard</h1>
-      {user ? (
-        <p className="text-lg mt-2">Welcome, {user.name}!</p>
-      ) : (
-        <p className="text-lg mt-2">Loading user data...</p>
-      )}
-    </div>
-  );
-}
+    return (
+        <div>
+            <h2>Budget Overview</h2>
+            <ul>
+                {budget.map((item, index) => (
+                    <li key={index}>{item.name}: ${item.amount}</li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default Dashboard;

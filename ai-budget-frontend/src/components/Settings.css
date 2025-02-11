@@ -1,0 +1,13 @@
+.settings {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .settings .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  

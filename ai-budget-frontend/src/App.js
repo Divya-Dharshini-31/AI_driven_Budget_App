@@ -1,18 +1,26 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import Navbar from "./components/Navbar"; 
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
+import Transactions from "./components/Transactions";
+import Settings from "./components/Settings";
+import "./App.css";
 
-export default function App() {
+function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+      <div className="app-container">
+        <Sidebar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/transactions" element={<Transactions />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
 }
+
+export default App;
