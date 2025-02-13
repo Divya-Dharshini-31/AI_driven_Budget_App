@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import Transactions from "./components/Transactions";
 import Settings from "./components/Settings";
 import "./App.css";

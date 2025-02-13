@@ -1,46 +1,121 @@
-.dashboard {
-    flex-grow: 1;
-    padding: 20px;
+/* Dashboard Container */
+.dashboard-container {
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Titles & Headings */
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #37474f;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  color: #455a64;
+  margin-top: 30px;
+}
+
+/* Budget Details */
+.budget-details {
+  background: #64b5f6;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Expense Table */
+.expense-section {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #eceff1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.expense-table th, .expense-table td {
+  padding: 12px;
+  border: 1px solid #b0bec5;
+  text-align: center;
+}
+
+.expense-table th {
+  background-color: #5c6bc0;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.expense-amount {
+  color: #e57373;
+  font-weight: bold;
+}
+
+.expense-category {
+  font-weight: bold;
+  color: #7e57c2;
+}
+
+/* FLEXBOX FIX: CHARTS STRETCH FULL WIDTH */
+.chart-expense-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+/* Chart Containers */
+.chart-container {
+  flex: 1;
+  min-width: 45%;
+  height: 400px; /* Ensures graphs fill space */
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .chart-expense-container {
+      flex-direction: row;
+      flex-wrap: wrap;
   }
-  
-  .title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
+  .chart-container {
+      min-width: 48%;
   }
-  
-  .cards {
-    display: flex;
-    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .chart-expense-container {
+      flex-direction: column;
   }
-  
-  .card {
-    flex: 1;
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+  .chart-container {
+      width: 90%;
+      height: 350px; /* Adjust height for mobile */
   }
-  
-  .card-green {
-    background: #2ecc71;
+
+  .budget-details {
+      flex-direction: column;
+      text-align: center;
   }
-  
-  .card-red {
-    background: #e74c3c;
-  }
-  
-  .card-blue {
-    background: #3498db;
-  }
-  
-  .chart-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 40px;
-  }
-  
+}
