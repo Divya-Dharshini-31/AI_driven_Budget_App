@@ -1,13 +1,65 @@
 .settings {
-    flex-grow: 1;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .settings .title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
+  flex-grow: 1;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.setting-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4f4f4;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.setting-option:hover {
+  background: #ddd;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #555;
+}
+
+.setting-details {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-top: -5px;
+  border-radius: 5px;
+  border-left: 3px solid #007bff;
+  text-align: left;
+}
+
+.setting-details label {
+  display: block;
+  margin: 5px 0;
+}
+
+.setting-details select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.logout {
+  background: #ff5252;
+  color: white;
+}
+
+.logout-icon {
+  color: white;
+}

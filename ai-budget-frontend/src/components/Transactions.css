@@ -1,13 +1,96 @@
 .transactions {
-    flex-grow: 1;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .transactions .title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
+  flex-grow: 1;
+  padding: 20px;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4f4f4;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.transaction-item:hover {
+  background: #ddd;
+}
+
+.transaction-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.income-icon {
+  color: green;
+}
+
+.expense-icon {
+  color: red;
+}
+
+.transaction-details {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.transaction-category {
+  font-weight: bold;
+  display: block;
+}
+
+.transaction-date {
+  font-size: 12px;
+  color: gray;
+}
+
+.transaction-amount {
+  font-weight: bold;
+}
+
+.income {
+  border-left: 4px solid green;
+}
+
+.expense {
+  border-left: 4px solid red;
+}
+
+.transaction-status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.completed {
+  background: #28a745;
+  color: white;
+}
+
+.pending {
+  background: #ffc107;
+  color: black;
+}
+
+.failed {
+  background: #dc3545;
+  color: white;
+}
