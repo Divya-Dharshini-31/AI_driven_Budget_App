@@ -30,3 +30,12 @@ class Income(models.Model):
 
     def __str__(self):
         return f"{self.source} - {self.amount}"
+    
+from django.db import models
+
+class Expense(models.Model):
+    date = models.DateField()
+    amount = models.FloatField()
+
+    def _str_(self):
+        return f"{self.date} - {self.amount}"

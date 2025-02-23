@@ -1,0 +1,49 @@
+.forecast-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.forecast-table th, .forecast-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.forecast-table th {
+  background: #ff6f61;
+  color: white;
+}
+
+.forecast-item td {
+  font-size: 16px;
+}
+
+.forecast-item .alert {
+  color: red;
+  font-weight: bold;
+}
+
+.forecast-item .success {
+  color: green;
+  font-weight: bold;
+}
+
